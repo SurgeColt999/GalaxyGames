@@ -948,7 +948,7 @@ function openGame(card){
   ptitle.textContent=getData(card,'name').toUpperCase();
   var tags=getTags(card);
   renderPlayerChips(tags);
-  gframe.src=getData(card,'file');
+  var BASE='https://cdn.jsdelivr.net/gh/SurgeColt999/GalaxyGames@main/'; gframe.src=BASE+getData(card,'file');
   player.classList.add('open');
   document.body.style.overflow='hidden';
 }

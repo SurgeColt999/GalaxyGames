@@ -1,7 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg">
-  <foreignObject width="100%" height="100%">
-    <body xmlns="http://www.w3.org/1999/xhtml">
-      <iframe src="index.html" width="100%" height="100%" seamless="seamless"></iframe>
-    </body>
-  </foreignObject>
-</svg>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Games</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Galaxy Games</h1>
+        <input type="text" id="search" placeholder="Search games...">
+        <nav id="category-filters">
+            <button data-category="all">All</button>
+            <button data-category="action">Action</button>
+            <button data-category="adventure">Adventure</button>
+            <button data-category="puzzle">Puzzle</button>
+            <button data-category="strategy">Strategy</button>
+        </nav>
+    </header>
+    <main id="game-container">
+        <!-- Iframes for games will be loaded here dynamically -->
+    </main>
+    <footer>
+        <p>&copy; 2026 Galaxy Games</p>
+    </footer>
+</body>
+</html>

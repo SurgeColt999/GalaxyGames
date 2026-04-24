@@ -1,0 +1,606 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+<foreignObject width="100%" height="100%">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Galaxy Games</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&amp;family=Exo+2:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+.tag-chips{display:none !important}
+.cbtn{display:none !important}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#03000a;--surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.09);--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.16);--accent:#a855f7;--accent2:#6d28d9;--accent3:#38bdf8;--accent4:#f472b6;--danger:#f43f5e;--text:#ede9fe;--muted:#6d5f8e;--r:14px;--font-hd:'Rajdhani',sans-serif;--font-bd:'Exo 2',sans-serif;--transition:0.22s cubic-bezier(.4,0,.2,1);--focus-ring:0 0 0 3px rgba(56,189,248,0.28);--nebula:radial-gradient(ellipse at 20% 10%,rgba(168,85,247,.18),transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(56,189,248,.14),transparent 55%),radial-gradient(ellipse at 50% 100%,rgba(244,114,182,.09),transparent 60%)}
+html,body{width:100%;min-height:100%;background:var(--bg);color:var(--text);font-family:var(--font-bd);overflow-x:hidden;scroll-behavior:smooth}
+button{cursor:pointer;font-family:inherit}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--accent2);border-radius:99px}
+body::before{content:'';position:fixed;inset:0;z-index:0;background:var(--nebula);pointer-events:none}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.25;background-image:radial-gradient(circle at 25% 15%,rgba(255,255,255,.75) 0 1px,transparent 1.5px),radial-gradient(circle at 60% 35%,rgba(168,200,255,.65) 0 1px,transparent 1.5px),radial-gradient(circle at 80% 70%,rgba(255,255,255,.6) 0 1px,transparent 1.5px),radial-gradient(circle at 15% 75%,rgba(244,114,182,.6) 0 1px,transparent 1.5px);background-size:240px 240px,320px 320px,280px 280px,260px 260px;animation:starDrift 65s linear infinite}
+@keyframes starDrift{from{transform:translateY(0)}to{transform:translateY(28px)}}
+#cvs{position:fixed;inset:0;z-index:0;pointer-events:none}
+.blob{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(120px)}
+.b1{width:800px;height:800px;background:radial-gradient(circle,rgba(109,40,217,0.12),transparent 70%);top:-300px;left:-250px;animation:blobDrift 25s ease-in-out infinite alternate}
+.b2{width:600px;height:600px;background:radial-gradient(circle,rgba(168,85,247,0.09),transparent 70%);top:30%;right:-200px;animation:blobDrift 18s ease-in-out infinite alternate-reverse}
+.b3{width:500px;height:500px;background:radial-gradient(circle,rgba(56,189,248,0.07),transparent 70%);bottom:-100px;left:35%;animation:blobDrift 22s ease-in-out infinite alternate}
+.b4{width:350px;height:350px;background:radial-gradient(circle,rgba(244,114,182,0.06),transparent 70%);top:60%;left:10%;animation:blobDrift 30s ease-in-out infinite alternate-reverse}
+@keyframes blobDrift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,25px) scale(1.08)}}
+#pw{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 40%,rgba(109,40,217,0.15) 0%,transparent 65%),var(--bg)}
+.pw-inner{display:flex;flex-direction:column;align-items:center;gap:22px;background:rgba(7,0,20,0.88);border:1px solid rgba(168,85,247,0.25);border-radius:28px;padding:52px 56px;backdrop-filter:blur(40px);position:relative;z-index:1;box-shadow:0 0 120px rgba(109,40,217,0.2),inset 0 1px 0 rgba(255,255,255,0.07);animation:fadeUp .55s cubic-bezier(.34,1.56,.64,1)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px) scale(0.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.pw-ring{position:absolute;width:220px;height:220px;top:-60px;left:50%;transform:translateX(-50%);border-radius:50%;border:1px dashed rgba(168,85,247,0.18);pointer-events:none;animation:ringRotate 40s linear infinite}
+.pw-ring::before{content:'\2756';position:absolute;top:-8px;left:50%;transform:translateX(-50%);color:var(--accent);font-size:.7rem;opacity:.6}
+@keyframes ringRotate{from{transform:translateX(-50%) rotate(0deg)}to{transform:translateX(-50%) rotate(360deg)}}
+.pw-orbit-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--accent3);box-shadow:0 0 12px var(--accent3);top:-3px;left:calc(50% - 3px);transform-origin:3px 113px;animation:orbitDot 8s linear infinite}
+@keyframes orbitDot{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.pw-planet{font-size:3.4rem;animation:floatPlanet 5s ease-in-out infinite;filter:drop-shadow(0 0 30px rgba(168,85,247,0.8));position:relative;z-index:1}
+@keyframes floatPlanet{0%,100%{transform:translateY(0) scale(1) rotate(-3deg)}50%{transform:translateY(-8px) scale(1.06) rotate(3deg)}}
+.pw-title{font-family:var(--font-hd);font-size:2.9rem;font-weight:700;letter-spacing:9px;text-transform:uppercase;text-align:center;background:linear-gradient(135deg,#fff 0%,#c4b5fd 40%,var(--accent) 75%,var(--accent3) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.pw-sub{color:var(--muted);font-size:.72rem;letter-spacing:4px;text-transform:uppercase;margin-top:-12px}
+#pw-in{width:270px;padding:14px 24px;text-align:center;letter-spacing:8px;font-size:1rem;background:rgba(255,255,255,0.04);border:1px solid rgba(168,85,247,0.22);border-radius:99px;color:var(--text);outline:none;transition:border-color .25s,box-shadow .25s;font-family:var(--font-bd)}
+#pw-in:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(168,85,247,0.15)}
+#pw-go{width:270px;padding:14px;border:none;border-radius:99px;background:linear-gradient(135deg,var(--accent2) 0%,var(--accent) 60%,var(--accent3) 100%);color:#fff;font-family:var(--font-hd);font-size:.95rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 32px rgba(168,85,247,0.4);position:relative;overflow:hidden}
+#pw-go::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.15) 0%,transparent 60%)}
+#pw-go:hover{transform:translateY(-2px);box-shadow:0 8px 48px rgba(168,85,247,0.6)}
+#pw-go:active{transform:translateY(1px);opacity:.85}
+#pw-err{color:var(--danger);font-size:.75rem;letter-spacing:1px;min-height:16px}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-9px)}40%{transform:translateX(9px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+.pw-shake{animation:shake 0.4s ease !important}
+#site{display:none;position:relative;z-index:1}
+header{position:sticky;top:0;z-index:200;background:rgba(3,0,10,0.92);backdrop-filter:blur(40px);border-bottom:1px solid var(--border);padding:0 32px;height:66px;display:flex;align-items:center;gap:18px}
+header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(168,85,247,0.4) 30%,rgba(56,189,248,0.3) 70%,transparent 100%)}
+.logo{font-family:var(--font-hd);font-size:1.5rem;font-weight:700;letter-spacing:4px;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-text{background:linear-gradient(135deg,#fff 0%,var(--accent3) 60%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo-text em{font-style:normal;background:linear-gradient(135deg,var(--accent) 0%,var(--accent4) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.search-wrap{display:flex;align-items:center;gap:10px;flex:1;max-width:360px}
+.search-box{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:99px;padding:0 18px;height:40px;flex:1;transition:border-color .2s,box-shadow .2s}
+.search-box:focus-within{border-color:rgba(168,85,247,0.45);box-shadow:0 0 0 3px rgba(168,85,247,0.1)}
+.search-box svg{opacity:.35;flex-shrink:0}
+#sq{background:transparent;border:none;outline:none;color:var(--text);font-size:.9rem;width:100%;font-family:var(--font-bd)}
+#sq::placeholder{color:var(--muted)}
+#sq-clear{background:none;border:none;color:var(--muted);padding:0;font-size:1rem;line-height:1;display:none;flex-shrink:0;transition:color .18s}
+#sq-clear:hover{color:var(--text)}
+#sq-clear.visible{display:block}
+.hdr-nav{display:flex;gap:4px;margin-left:auto;flex-shrink:0}
+.hn{padding:7px 16px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:var(--font-hd);font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:all .18s;white-space:nowrap}
+.hn:hover{border-color:var(--border2);color:var(--text);background:var(--surface2)}
+.hn.active{background:var(--surface2);border-color:rgba(168,85,247,0.4);color:var(--text)}
+#cat-bar{position:sticky;top:66px;z-index:190;background:rgba(3,0,10,0.88);backdrop-filter:blur(32px);border-bottom:1px solid var(--border);padding:10px 32px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+#cat-bar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(56,189,248,0.25) 40%,rgba(168,85,247,0.3) 60%,transparent 100%)}
+.cp{padding:5px 16px;border-radius:99px;font-size:.68rem;font-weight:600;letter-spacing:1.5px;border:1px solid var(--border);background:transparent;color:var(--muted);transition:all .18s;white-space:nowrap;font-family:var(--font-hd);text-transform:uppercase}
+.cp:hover{border-color:var(--border2);color:var(--text);background:var(--surface2)}
+.cp.on{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 0 20px rgba(168,85,247,0.4)}
+.hero{text-align:center;padding:80px 40px 60px;position:relative;overflow:hidden}
+.hero-constellation{position:absolute;inset:0;pointer-events:none;overflow:hidden;opacity:.18}
+.hero::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:900px;height:1px;background:linear-gradient(90deg,transparent,var(--accent2),var(--accent),var(--accent3),transparent);opacity:.5}
+.hero h1{font-family:var(--font-hd);font-size:clamp(2.4rem,6vw,4.6rem);font-weight:700;letter-spacing:6px;text-transform:uppercase;line-height:1.08;margin-bottom:22px;background:linear-gradient(135deg,#fff 0%,#ddd6fe 25%,var(--accent) 55%,var(--accent3) 85%,var(--accent4) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 60px rgba(168,85,247,0.3))}
+.hero-desc{color:var(--muted);font-size:.82rem;letter-spacing:2px;margin-bottom:36px;text-transform:uppercase;max-width:440px;margin-left:auto;margin-right:auto}
+.request-btn{display:inline-flex;align-items:center;gap:18px;background:rgba(255,255,255,0.03);border:1px solid rgba(168,85,247,0.25);border-radius:18px;padding:18px 28px;text-decoration:none;color:var(--text);transition:border-color .22s,background .22s,transform .22s,box-shadow .22s;position:relative;overflow:hidden;max-width:420px;margin:0 auto}
+.request-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(168,85,247,0.08) 0%,rgba(56,189,248,0.04) 100%);opacity:0;transition:opacity .22s}
+.request-btn:hover{border-color:rgba(168,85,247,0.55);background:rgba(255,255,255,0.05);transform:translateY(-3px);box-shadow:0 12px 40px rgba(168,85,247,0.2)}
+.request-btn:hover::before{opacity:1}
+.request-btn:active{transform:translateY(-1px)}
+.request-btn-icon{font-size:2rem;flex-shrink:0;filter:drop-shadow(0 0 12px rgba(168,85,247,0.6))}
+.request-btn-text{display:flex;flex-direction:column;gap:3px;text-align:left;flex:1}
+.request-btn-main{font-family:var(--font-hd);font-size:1.1rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.request-btn-sub{font-size:.68rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+.request-btn-arrow{font-size:1rem;color:var(--accent);flex-shrink:0;transition:transform .18s}
+.request-btn:hover .request-btn-arrow{transform:translateX(4px)}
+.section{padding:32px 32px 100px}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap}
+.section-title{font-family:var(--font-hd);font-size:.72rem;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--accent3);display:flex;align-items:center;gap:12px}
+.section-title::before{content:'';width:30px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent3));border-radius:2px}
+#gc{font-size:.72rem;color:var(--muted);letter-spacing:.5px}
+#game-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:11px}
+.card{background:rgba(12,3,28,.78);border:1px solid rgba(168,85,247,.2);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;position:relative;transition:transform var(--transition),box-shadow var(--transition),border-color var(--transition),background-color var(--transition);will-change:transform;transform:translateZ(0);backface-visibility:hidden;outline:none}
+.card::before{content:'';position:absolute;inset:0;border-radius:12px;background:linear-gradient(145deg,rgba(255,255,255,0.08) 0%,transparent 45%,rgba(56,189,248,0.07) 100%);opacity:.2;transition:opacity var(--transition);pointer-events:none;z-index:1}
+.card:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 14px 32px rgba(0,0,0,.5),0 0 0 1px rgba(168,85,247,.28),0 0 18px rgba(168,85,247,.22)}
+.card:hover::before{opacity:1}
+.card:active{transform:translateY(-4px) scale(1.01)}
+.card:focus-visible{border-color:rgba(56,189,248,0.62);box-shadow:var(--focus-ring),0 0 0 1px rgba(56,189,248,0.35)}
+.card[data-primary="Action"]{border-top:2px solid #c026d3}
+.card[data-primary="Arcade"]{border-top:2px solid #0ea5e9}
+.card[data-primary="Puzzle"]{border-top:2px solid #7c3aed}
+.card[data-primary="Strategy"]{border-top:2px solid #10b981}
+.card[data-primary="Adventure"]{border-top:2px solid #a855f7}
+.card[data-primary="Sports"]{border-top:2px solid #22c55e}
+.card[data-primary="Horror"]{border-top:2px solid #ef4444}
+.card[data-primary="Pokemon"]{border-top:2px solid #facc15}
+.card[data-primary="Other"]{border-top:2px solid #f59e0b}
+.card:not([data-primary]){border-top:2px solid #c026d3}
+.th{width:100%;aspect-ratio:1/1;display:block;position:relative;overflow:hidden;background:#0a0014}
+.th img{width:100%;height:100%;object-fit:cover;display:block;transition:transform var(--transition),filter var(--transition);filter:brightness(.78) saturate(1.05)}
+.card:hover .th img{transform:scale(1.08);filter:brightness(.95) saturate(1.18)}
+.th-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.2rem;z-index:0}
+.th img ~ .th-fallback{display:none}
+.th img.img-err ~ .th-fallback{display:flex}
+.th::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.04) 50%,transparent 100%);background-size:200% 100%;animation:shimmer 1.6s ease-in-out infinite;z-index:2;pointer-events:none;opacity:1;transition:opacity .3s}
+.th.loaded::after{opacity:0}
+.th-overlay{position:absolute;bottom:0;left:0;right:0;height:70%;background:linear-gradient(transparent,rgba(2,0,8,.85) 55%,rgba(2,0,8,.95));z-index:3;pointer-events:none}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.cb{position:absolute;inset:0;z-index:4;display:flex;align-items:flex-end;justify-content:center;padding:10px;background:linear-gradient(180deg,rgba(2,0,8,0) 40%,rgba(2,0,8,.82) 100%);opacity:0;transform:translateY(10px);transition:opacity var(--transition),transform var(--transition);pointer-events:none}
+.card:hover .cb,.card:focus-visible .cb{opacity:1;transform:translateY(0)}
+.cn{font-family:var(--font-hd);font-size:.84rem;font-weight:700;letter-spacing:1.4px;color:#fff;text-transform:uppercase;line-height:1.22;text-align:center;text-shadow:0 0 12px rgba(0,0,0,.8),0 0 20px rgba(168,85,247,.35);white-space:normal;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.tag-chips{display:flex;gap:4px;flex-wrap:wrap;margin-top:2px}
+.tag-chip{font-size:.55rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:99px;border:1px solid;line-height:1.4}
+.tag-chip-Action{color:#c026d3;border-color:rgba(192,38,211,0.3);background:rgba(192,38,211,0.07)}
+.tag-chip-Arcade{color:#0ea5e9;border-color:rgba(14,165,233,0.3);background:rgba(14,165,233,0.07)}
+.tag-chip-Puzzle{color:#7c3aed;border-color:rgba(124,58,237,0.3);background:rgba(124,58,237,0.07)}
+.tag-chip-Strategy{color:#10b981;border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.07)}
+.tag-chip-Adventure{color:#a855f7;border-color:rgba(168,85,247,0.3);background:rgba(168,85,247,0.07)}
+.tag-chip-Sports{color:#22c55e;border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.07)}
+.tag-chip-Horror{color:#ef4444;border-color:rgba(239,68,68,0.3);background:rgba(239,68,68,0.07)}
+.tag-chip-Pokemon{color:#facc15;border-color:rgba(250,204,21,0.3);background:rgba(250,204,21,0.07)}
+.tag-chip-Other{color:#f59e0b;border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.07)}
+.tag-chip-series{color:var(--muted);border-color:var(--border2);background:rgba(255,255,255,0.05)}
+.cbtn{margin-top:8px;border:none;border-radius:9px;padding:9px;width:100%;color:#fff;font-family:var(--font-hd);font-size:.68rem;letter-spacing:3px;font-weight:700;text-transform:uppercase;transition:opacity .18s,transform .15s;position:relative;overflow:hidden}
+.cbtn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.2) 0%,transparent 55%);opacity:0;transition:opacity .18s}
+.cbtn:hover{opacity:.9;transform:scale(1.03)}
+.cbtn:hover::before{opacity:1}
+.cbtn:active{transform:scale(0.98)}
+.card[data-primary="Action"] .cbtn{background:linear-gradient(135deg,#6b0525,#c026d3)}
+.card[data-primary="Arcade"] .cbtn{background:linear-gradient(135deg,#003d7a,#0ea5e9)}
+.card[data-primary="Puzzle"] .cbtn{background:linear-gradient(135deg,#3d006e,#7c3aed)}
+.card[data-primary="Strategy"] .cbtn{background:linear-gradient(135deg,#00403c,#10b981)}
+.card[data-primary="Adventure"] .cbtn{background:linear-gradient(135deg,#52006c,#a855f7)}
+.card[data-primary="Sports"] .cbtn{background:linear-gradient(135deg,#0e4200,#22c55e)}
+.card[data-primary="Horror"] .cbtn{background:linear-gradient(135deg,#3d0000,#ef4444)}
+.card[data-primary="Pokemon"] .cbtn{background:linear-gradient(135deg,#7a3800,#facc15)}
+.card[data-primary="Other"] .cbtn{background:linear-gradient(135deg,#600032,#f59e0b)}
+.card:not([data-primary]) .cbtn{background:linear-gradient(135deg,#6b0525,#c026d3)}
+#nores{display:none;grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--muted)}
+#nores span{display:block;font-size:2.8rem;margin-bottom:16px}
+#nores strong{display:block;font-family:var(--font-hd);font-size:1rem;letter-spacing:3px;margin-bottom:6px;color:var(--text);opacity:.4}
+#nores p{font-size:.78rem;letter-spacing:2px;opacity:.5;margin-top:6px}
+#player{display:none;position:fixed;inset:0;z-index:8000;flex-direction:column;background:#000}
+#player.open{display:flex;animation:playerIn .2s cubic-bezier(.4,0,.2,1)}
+@keyframes playerIn{from{opacity:0}to{opacity:1}}
+.pbar{display:flex;align-items:center;gap:12px;padding:0 18px;height:52px;flex-shrink:0;background:rgba(3,0,10,0.98);border-bottom:1px solid var(--border);position:relative}
+.pbar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(168,85,247,0.5),rgba(56,189,248,0.4),transparent)}
+.pbar-left{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
+.pbar-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:dotPulse 2s ease-in-out infinite}
+@keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.3}}
+#ptitle{font-family:var(--font-hd);font-size:.88rem;font-weight:600;letter-spacing:4px;color:var(--text);text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pbar-cats{display:flex;gap:4px;flex-shrink:0}
+.pbar-cat-chip{font-size:.55rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid}
+.pbtns{display:flex;gap:8px;flex-shrink:0}
+.pb{display:flex;align-items:center;gap:7px;padding:7px 16px;height:34px;background:var(--surface);border:1px solid var(--border);border-radius:9px;color:var(--muted);font-size:.7rem;font-weight:600;letter-spacing:1px;font-family:var(--font-hd);text-transform:uppercase;transition:all .18s;white-space:nowrap}
+.pb:hover{border-color:var(--border2);color:var(--text);background:var(--surface2)}
+.pb.pb-close:hover{border-color:rgba(244,63,94,0.45);color:#f43f5e;background:rgba(244,63,94,0.08)}
+.pb.pb-fs:hover{border-color:rgba(56,189,248,0.45);color:var(--accent3);background:rgba(56,189,248,0.08)}
+.pb.pb-reload:hover{border-color:rgba(168,85,247,0.45);color:var(--accent);background:rgba(168,85,247,0.08)}
+#gframe{flex:1;width:100%;border:none;background:#000;display:block}
+button:focus-visible,input:focus-visible,.cp:focus-visible,.hn:focus-visible,.request-btn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+@media(max-width:700px){header{padding:10px 14px;gap:10px}.hdr-nav{display:none}#cat-bar{padding:8px 14px;top:56px}.hero{padding:50px 16px 44px}.section{padding:18px 12px 54px}#game-grid{grid-template-columns:repeat(auto-fill,minmax(122px,1fr));gap:9px}.request-btn{flex-direction:column;gap:10px;text-align:center;padding:20px}.request-btn-arrow{display:none}.injex-inner{padding:36px 28px}}
+footer{text-align:center;padding:36px;color:var(--muted);font-size:.7rem;letter-spacing:2.5px;border-top:1px solid var(--border);position:relative;z-index:1;text-transform:uppercase}
+footer::before{content:'';display:block;width:200px;height:1px;margin:0 auto 24px;background:linear-gradient(90deg,transparent,rgba(168,85,247,0.4),transparent)}
+footer strong{color:var(--accent3)}
+#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(7,0,20,0.96);border:1px solid var(--border2);border-radius:99px;padding:11px 24px;font-size:.76rem;letter-spacing:1.5px;color:var(--text);z-index:9000;backdrop-filter:blur(24px);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;box-shadow:0 8px 40px rgba(0,0,0,0.6)}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#injex-modal{position:fixed;inset:0;z-index:9500;display:none;align-items:center;justify-content:center}
+#injex-modal.open{display:flex}
+.injex-overlay{position:absolute;inset:0;background:rgba(3,0,10,0.96);backdrop-filter:blur(20px)}
+.injex-inner{display:flex;flex-direction:column;align-items:center;gap:20px;background:rgba(7,0,20,0.92);border:1px solid rgba(239,68,68,0.35);border-radius:24px;padding:48px 52px;position:relative;z-index:1;box-shadow:0 0 100px rgba(239,68,68,0.15),inset 0 1px 0 rgba(255,255,255,0.06);animation:fadeUp .4s cubic-bezier(.34,1.56,.64,1)}
+.injex-icon{font-size:2.8rem;filter:drop-shadow(0 0 20px rgba(239,68,68,0.7));animation:floatPlanet 4s ease-in-out infinite}
+.injex-title{font-family:var(--font-hd);font-size:1.9rem;font-weight:700;letter-spacing:7px;text-transform:uppercase;background:linear-gradient(135deg,#fff,#f87171);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.injex-sub{color:var(--muted);font-size:.68rem;letter-spacing:3px;text-transform:uppercase;margin-top:-8px}
+#injex-in{width:240px;padding:12px 20px;text-align:center;letter-spacing:6px;font-size:.95rem;background:rgba(255,255,255,0.04);border:1px solid rgba(239,68,68,0.25);border-radius:99px;color:var(--text);outline:none;font-family:var(--font-bd);transition:border-color .2s,box-shadow .2s}
+#injex-in:focus{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,0.15)}
+#injex-go{width:240px;padding:12px;border:none;border-radius:99px;background:linear-gradient(135deg,#7f1d1d,#ef4444,#fca5a5);color:#fff;font-family:var(--font-hd);font-size:.88rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;cursor:pointer;box-shadow:0 4px 28px rgba(239,68,68,0.35);transition:transform .2s,box-shadow .2s}
+#injex-go:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(239,68,68,0.5)}
+#injex-go:active{transform:translateY(1px);opacity:.85}
+#injex-err{color:var(--danger);font-size:.72rem;letter-spacing:1px;min-height:14px}
+#injex-cancel{background:none;border:none;color:var(--muted);font-size:.65rem;letter-spacing:2px;text-transform:uppercase;font-family:var(--font-hd);cursor:pointer;padding:4px 0;transition:color .18s}
+#injex-cancel:hover{color:var(--text)}
+@media(prefers-reduced-motion:reduce){html,body{scroll-behavior:auto}*,*::before,*::after{animation:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+<canvas id="cvs"></canvas>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
+<div id="toast"></div>
+<div id="pw">
+  <div class="pw-inner">
+    <div class="pw-ring"><div class="pw-orbit-dot"></div></div>
+    <div class="pw-planet">&#127756;</div>
+    <div class="pw-title">Galaxy Games</div>
+    <div class="pw-sub">Email epshnayak01@epsne.org for the code</div>
+    <input id="pw-in" type="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" autocomplete="off"/>
+    <button id="pw-go">&#10024; Enter Galaxy</button>
+    <span id="pw-err">&#160;</span>
+  </div>
+</div>
+
+<div id="injex-modal">
+  <div class="injex-overlay"></div>
+  <div class="injex-inner">
+    <div class="injex-icon">&#128274;</div>
+    <div class="injex-title">Injex</div>
+    <div class="injex-sub">Restricted Access</div>
+    <input id="injex-in" type="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" autocomplete="off"/>
+    <button id="injex-go">&#9888;&#65039; Enter</button>
+    <span id="injex-err">&#160;</span>
+    <button id="injex-cancel">&#10005; Cancel</button>
+  </div>
+</div>
+
+<div id="site">
+  <header>
+    <div class="logo"><span style="font-size:1.3rem">&#127756;</span><span class="logo-text">Galaxy<em>Games</em></span></div>
+    <div class="search-wrap">
+      <div class="search-box">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="sq" type="text" placeholder="Search games..." autocomplete="off" spellcheck="false"/>
+        <button id="sq-clear" title="Clear">&#10005;</button>
+      </div>
+    </div>
+    <nav class="hdr-nav">
+      <button class="hn active" id="nav-home">&#127968; Home</button>
+    </nav>
+  </header>
+
+  <div id="cat-bar">
+    <button class="cp on" data-c="all">All</button>
+    <button class="cp" data-c="Action">Action</button>
+    <button class="cp" data-c="Arcade">Arcade</button>
+    <button class="cp" data-c="Puzzle">Puzzle</button>
+    <button class="cp" data-c="Strategy">Strategy</button>
+    <button class="cp" data-c="Adventure">Adventure</button>
+    <button class="cp" data-c="Sports">Sports</button>
+    <button class="cp" data-c="Horror">Horror</button>
+    <button class="cp" data-c="Pokemon">Pok&#233;mon</button>
+    <button class="cp" data-c="Other">Other</button>
+  </div>
+
+  <section class="hero">
+    <svg class="hero-constellation" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice">
+      <line x1="100" y1="50" x2="280" y2="120" stroke="rgba(168,85,247,0.5)" stroke-width="0.5"/>
+      <line x1="280" y1="120" x2="450" y2="60" stroke="rgba(56,189,248,0.4)" stroke-width="0.5"/>
+      <line x1="450" y1="60" x2="600" y2="180" stroke="rgba(168,85,247,0.3)" stroke-width="0.5"/>
+      <line x1="600" y1="180" x2="780" y2="80" stroke="rgba(244,114,182,0.4)" stroke-width="0.5"/>
+      <line x1="780" y1="80" x2="950" y2="140" stroke="rgba(56,189,248,0.3)" stroke-width="0.5"/>
+      <line x1="950" y1="140" x2="1100" y2="60" stroke="rgba(168,85,247,0.4)" stroke-width="0.5"/>
+      <circle cx="100" cy="50" r="2" fill="rgba(168,85,247,0.8)"/>
+      <circle cx="280" cy="120" r="2.5" fill="rgba(56,189,248,0.8)"/>
+      <circle cx="450" cy="60" r="2" fill="rgba(168,85,247,0.6)"/>
+      <circle cx="600" cy="180" r="3" fill="rgba(244,114,182,0.7)"/>
+      <circle cx="780" cy="80" r="2" fill="rgba(56,189,248,0.8)"/>
+      <circle cx="950" cy="140" r="2.5" fill="rgba(168,85,247,0.6)"/>
+      <circle cx="1100" cy="60" r="2" fill="rgba(56,189,248,0.7)"/>
+    </svg>
+    <h1>Yo guys I&#39;m revamping so<br/> sorry if somethings don&#39;t work</h1>
+    <a class="request-btn" href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSHxGvGGPJSmXcFmQNmcTBTlTMXGSrxdzFBCcmDRZMmDJdQrMvQbplmkJgPqNCLxQZXblhpj" target="_blank" rel="noopener">
+      <span class="request-btn-icon">&#127918;</span>
+      <span class="request-btn-text">
+        <span class="request-btn-main">Request a Game</span>
+        <span class="request-btn-sub">Email epshnayak01@epsne.org</span>
+      </span>
+      <span class="request-btn-arrow">&#10148;</span>
+    </a>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="section-title">Game Library</div>
+      <div id="gc">Loading...</div>
+    </div>
+    <div id="game-grid">
+      <div class="card" data-file="clrun3.html" data-name="Run 3" data-tags="Arcade" data-primary="Arcade" data-group="Arcade"><div class="th"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Run 3" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127939;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Run 3</div><div class="tag-chips"><span class="tag-chip tag-chip-Arcade">Arcade</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clslope.html" data-name="Slope" data-tags="Arcade" data-primary="Arcade" data-group="Arcade"><div class="th"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Slope" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#9889;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Slope</div><div class="tag-chips"><span class="tag-chip tag-chip-Arcade">Arcade</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clgdlite.html" data-name="Geometry Dash" data-tags="Arcade,Action" data-primary="Arcade" data-group="Arcade"><div class="th"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Geometry Dash" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128311;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Geometry Dash</div><div class="tag-chips"><span class="tag-chip tag-chip-Arcade">Arcade</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clgoogledino.html" data-name="Google Dino" data-tags="Arcade" data-primary="Arcade" data-group="Arcade"><div class="th"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Google Dino" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#129429;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Google Dino</div><div class="tag-chips"><span class="tag-chip tag-chip-Arcade">Arcade</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpacman.html" data-name="Pac-Man" data-tags="Arcade" data-primary="Arcade" data-group="Arcade"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPF6LZqGGIz1G7iTAcrMurjUBKS08D8XR3Jw&amp;s" alt="Pac-Man" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128126;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Pac-Man</div><div class="tag-chips"><span class="tag-chip tag-chip-Arcade">Arcade</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clflappybird.html" data-name="Flappy Bird" data-tags="Arcade" data-primary="Arcade" data-group="Arcade"><div class="th"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Flappy Bird" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128038;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Flappy Bird</div><div class="tag-chips"><span class="tag-chip tag-chip-Arcade">Arcade</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clcrossyroad.html" data-name="Crossy Road" data-tags="Arcade" data-primary="Arcade" data-group="Arcade"><div class="th"><img src="https://m.media-amazon.com/images/I/91hfg66ozwL.png" alt="Crossy Road" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128020;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Crossy Road</div><div class="tag-chips"><span class="tag-chip tag-chip-Arcade">Arcade</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="cltemplerun2.html" data-name="Temple Run" data-tags="Arcade,Adventure" data-primary="Arcade" data-group="Arcade"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREczIHVzGHpPjtSgmI-Uq1O6ZJe5eppb711w&amp;s" alt="Temple Run" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127963;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Temple Run</div><div class="tag-chips"><span class="tag-chip tag-chip-Arcade">Arcade</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clsubwaysurfersbuenosaires.html" data-name="Subway Surfers Buenos Aires" data-tags="Arcade" data-primary="Arcade" data-series="Subway Surfers" data-series-num="1" data-group="Arcade"><div class="th"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Subway Surfers BA" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128761;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Subway Surfers BA</div><div class="tag-chips"><span class="tag-chip tag-chip-Arcade">Arcade</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clsubwaysurfersmexico.html" data-name="Subway Surfers Mexico" data-tags="Arcade" data-primary="Arcade" data-series="Subway Surfers" data-series-num="2" data-group="Arcade"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIZmELZxXacnWU89NS74Pwy26kand5I1YN2Q&amp;s" alt="Subway Surfers MX" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128761;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Subway Surfers MX</div><div class="tag-chips"><span class="tag-chip tag-chip-Arcade">Arcade</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clstickmanhook.html" data-name="Stickman Hook" data-tags="Arcade,Action" data-primary="Arcade" data-series="Stickman" data-series-num="1" data-group="Arcade"><div class="th"><img src="https://m.media-amazon.com/images/I/610klDzmDsL.png" alt="Stickman Hook" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#129693;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Stickman Hook</div><div class="tag-chips"><span class="tag-chip tag-chip-Arcade">Arcade</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clstickmanduel.html" data-name="Stickman Duel" data-tags="Arcade,Action" data-primary="Arcade" data-series="Stickman" data-series-num="2" data-group="Arcade"><div class="th"><img src="https://play-lh.googleusercontent.com/VJBOHRHbn8RGneAmQXx7k6kVr7Ps_3fJpBBnHlHFfMyqsuybvaeOSSCLLbiKtQpQT-cE=w240-h480-rw" alt="Stickman Duel" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#9876;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Stickman Duel</div><div class="tag-chips"><span class="tag-chip tag-chip-Arcade">Arcade</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="cl1v1lol.html" data-name="1v1.LOL" data-tags="Action" data-primary="Action" data-group="Action"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB7YDssJL4HUDo3vua9BmnHRyt_U5oBRthdw&amp;s" alt="1v1.LOL" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127919;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">1v1.LOL</div><div class="tag-chips"><span class="tag-chip tag-chip-Action">Action</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clsmashkartsworking.html" data-name="Smash Karts" data-tags="Action,Sports" data-primary="Action" data-group="Action"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAdrpTBNT0iI8zuPF0NX0z6t9fJtigQpEhsQ&amp;s" alt="Smash Karts" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127950;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Smash Karts</div><div class="tag-chips"><span class="tag-chip tag-chip-Action">Action</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clrooftoprun.html" data-name="Rooftop Run" data-tags="Action" data-primary="Action" data-group="Action"><div class="th"><img src="https://www.contezero.com/user/pages/03.games/01.action/rooftop-run/RooftopRun.jpg" alt="Rooftop Run" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127939;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Rooftop Run</div><div class="tag-chips"><span class="tag-chip tag-chip-Action">Action</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clvex8.html" data-name="Vex 8" data-tags="Action,Arcade" data-primary="Action" data-group="Action"><div class="th"><img src="https://play-lh.googleusercontent.com/4tQSYur7SAvXeEvT5GBugYeqbh8KEQSLd1S16t8CJYyDN3g2p27wiPlXnqqAxeCqvg" alt="Vex 8" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#129336;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Vex 8</div><div class="tag-chips"><span class="tag-chip tag-chip-Action">Action</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clsuperhot.html" data-name="Superhot" data-tags="Action,Puzzle" data-primary="Action" data-group="Action"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5NRo3TfhUTGLYa6NPJv9341KXWqN-1RdAUQ&amp;s" alt="Superhot" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128293;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Superhot</div><div class="tag-chips"><span class="tag-chip tag-chip-Action">Action</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clovofixed.html" data-name="OvO" data-tags="Action" data-primary="Action" data-group="Action"><div class="th"><img src="https://play-lh.googleusercontent.com/v7KwGdPjJGjJjRXn46sck4DwDBdKSeRzGN44CjiXUtKV0jjOi51Bt4wcXud0m-SkXg" alt="OvO" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#129495;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">OvO</div><div class="tag-chips"><span class="tag-chip tag-chip-Action">Action</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clrooftopsnipers.html" data-name="Rooftop Snipers" data-tags="Action" data-primary="Action" data-series="Rooftop Snipers" data-series-num="1" data-group="Action"><div class="th"><img src="https://imgs.crazygames.com/rooftop-snipers_1x1/20250108040441/rooftop-snipers_1x1-cover?format=auto&amp;quality=100&amp;metadata=none&amp;width=1200" alt="Rooftop Snipers" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128299;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Rooftop Snipers</div><div class="tag-chips"><span class="tag-chip tag-chip-Action">Action</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clrooftopsnipers2.html" data-name="Rooftop Snipers 2" data-tags="Action" data-primary="Action" data-series="Rooftop Snipers" data-series-num="2" data-group="Action"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBKwPcHIg6zN45wovBi9CU_fTALtNlQuQiKQ&amp;s" alt="Rooftop Snipers 2" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127919;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Rooftop Snipers 2</div><div class="tag-chips"><span class="tag-chip tag-chip-Action">Action</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clbrawlsimulator3d.html" data-name="Brawl Simulator 3D" data-tags="Action" data-primary="Action" data-series="Brawl Stars" data-series-num="1" data-group="Action"><div class="th"><img src="https://avatars.mds.yandex.net/get-games/17955142/2a0000019ce0c22a96532cd4810937659d5e/orig" alt="Brawl Simulator 3D" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128165;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Brawl Simulator 3D</div><div class="tag-chips"><span class="tag-chip tag-chip-Action">Action</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clBrawlstars.html" data-name="Brawl Stars (Remake)" data-tags="Action" data-primary="Action" data-series="Brawl Stars" data-series-num="2" data-group="Action"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAeVY3DmUiTMtaclclXzoQuFeXJtAeqYg7cw&amp;s" alt="Brawl Stars Remake" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#129354;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Brawl Stars Remake</div><div class="tag-chips"><span class="tag-chip tag-chip-Action">Action</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="cltimeshooter3.html" data-name="Time Shooter 3" data-tags="Action" data-primary="Action" data-series="Time Shooter" data-series-num="3" data-group="Action"><div class="th"><img src="https://ozogames.com/uploads/2026/01/Time-Shooter-3-image.webp" alt="Time Shooter 3" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128049;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Time Shooter 3</div><div class="tag-chips"><span class="tag-chip tag-chip-Action">Action</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clFNAF.html" data-name="Five Nights at Freddy's" data-tags="Horror" data-primary="Horror" data-series="Five Nights at Freddy's" data-series-num="1" data-group="Horror"><div class="th"><img src="https://assets1.ignimgs.com/2020/02/04/five-nights-at-freddys-1---button-2020-1580781479002.jpg?crop=1%3A1%2Csmart&amp;format=jpg&amp;auto=webp&amp;quality=80" alt="FNaF 1" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127875;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">FNaF 1</div><div class="tag-chips"><span class="tag-chip tag-chip-Horror">Horror</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clFNAF2.html" data-name="Five Nights at Freddy's 2" data-tags="Horror" data-primary="Horror" data-series="Five Nights at Freddy's" data-series-num="2" data-group="Horror"><div class="th"><img src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/five-nights-at-freddys-2/a/ae/Freddys-2-buttonjpg-d63eb0.jpg" alt="FNaF 2" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128123;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">FNaF 2</div><div class="tag-chips"><span class="tag-chip tag-chip-Horror">Horror</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clFNAF3.html" data-name="Five Nights at Freddy's 3" data-tags="Horror" data-primary="Horror" data-series="Five Nights at Freddy's" data-series-num="3" data-group="Horror"><div class="th"><img src="https://play-lh.googleusercontent.com/A9kng-j9BLaA2dhRGsPExmjy9E4vfG-GHefvmyywT0J67ZEPGONIsFYlIokL5EUNfiHF" alt="FNaF 3" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128520;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">FNaF 3</div><div class="tag-chips"><span class="tag-chip tag-chip-Horror">Horror</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clFNAF4.html" data-name="Five Nights at Freddy's 4" data-tags="Horror" data-primary="Horror" data-series="Five Nights at Freddy's" data-series-num="4" data-group="Horror"><div class="th"><img src="https://play-lh.googleusercontent.com/od7MI1uOFMjj2Kvtk4Tc1Rt-YdDFmgLjE33yZlVINjhbj_NZ5ikZGT_YWpCP0LAGMg" alt="FNaF 4" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128561;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">FNaF 4</div><div class="tag-chips"><span class="tag-chip tag-chip-Horror">Horror</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clgrannyy.html" data-name="Granny" data-tags="Horror,Adventure" data-primary="Horror" data-series="Granny" data-series-num="1" data-group="Horror"><div class="th"><img src="https://play-lh.googleusercontent.com/yT_LBq_tyKeIDohKDsqN_Qt18jGIPUYIxY2C-1-E2YA9Qd60uZW08pua17qBmIiDPA" alt="Granny" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128128;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Granny</div><div class="tag-chips"><span class="tag-chip tag-chip-Horror">Horror</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clgranny22.html" data-name="Granny 2" data-tags="Horror,Adventure" data-primary="Horror" data-series="Granny" data-series-num="2" data-group="Horror"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtdh0EOptslG6Re87F0Mc5YDl0gBKbGDmkSw&amp;s" alt="Granny 2" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128128;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Granny 2</div><div class="tag-chips"><span class="tag-chip tag-chip-Horror">Horror</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clgranny3 (1).html" data-name="Granny 3" data-tags="Horror,Adventure" data-primary="Horror" data-series="Granny" data-series-num="3" data-group="Horror"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxs9U1Fug_Bgvmlvlf8uRI3ZbhzinL0E_cTg&amp;s" alt="Granny 3" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128128;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Granny 3</div><div class="tag-chips"><span class="tag-chip tag-chip-Horror">Horror</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clbaldisbasics.html" data-name="Baldi's Basics" data-tags="Horror,Puzzle" data-primary="Horror" data-series="Baldi's Basics" data-series-num="1" data-group="Horror"><div class="th"><img src="https://images.squarespace-cdn.com/content/v1/6491eb91bb711304dd556188/183e6f31-dd2a-4a90-969e-3ba2936ca8a1/baldisbasics_plus" alt="Baldi's Basics" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128218;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Baldi's Basics</div><div class="tag-chips"><span class="tag-chip tag-chip-Horror">Horror</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clbaldisbasicsremaster.html" data-name="Baldi's Basics Remastered" data-tags="Horror,Puzzle" data-primary="Horror" data-series="Baldi's Basics" data-series-num="2" data-group="Horror"><div class="th"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1712830/capsule_616x353.jpg?t=1723051067" alt="Baldi's Remastered" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128218;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Baldi's Remastered</div><div class="tag-chips"><span class="tag-chip tag-chip-Horror">Horror</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="cltetris.html" data-name="Tetris" data-tags="Puzzle" data-primary="Puzzle" data-group="Puzzle"><div class="th"><img src="https://m.media-amazon.com/images/I/61M3rDwh4qL.png" alt="Tetris" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#129513;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Tetris</div><div class="tag-chips"><span class="tag-chip tag-chip-Puzzle">Puzzle</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="cl2048.html" data-name="2048" data-tags="Puzzle,Strategy" data-primary="Puzzle" data-group="Puzzle"><div class="th"><img src="https://upload.wikimedia.org/wikipedia/commons/1/18/2048_logo.svg" alt="2048" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128290;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">2048</div><div class="tag-chips"><span class="tag-chip tag-chip-Puzzle">Puzzle</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clwordle.html" data-name="Wordle" data-tags="Puzzle" data-primary="Puzzle" data-group="Puzzle"><div class="th"><img src="https://www.internetmatters.org/wp-content/uploads/2022/02/wordle-logo.webp" alt="Wordle" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128221;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Wordle</div><div class="tag-chips"><span class="tag-chip tag-chip-Puzzle">Puzzle</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clcuttherope.html" data-name="Cut the Rope" data-tags="Puzzle" data-primary="Puzzle" data-group="Puzzle"><div class="th"><img src="https://imgs.crazygames.com/cut-the-rope-ebx_16x9/20240530085010/cut-the-rope-ebx_16x9-cover?metadata=none&amp;quality=60&amp;height=6602" alt="Cut the Rope" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127852;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Cut the Rope</div><div class="tag-chips"><span class="tag-chip tag-chip-Puzzle">Puzzle</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clangrybirds.html" data-name="Angry Birds" data-tags="Puzzle,Action" data-primary="Puzzle" data-group="Puzzle"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPmEUzMrGwpyQ9mVdpNG2hlfuWu5FzvPDkRw&amp;s" alt="Angry Birds" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128055;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Angry Birds</div><div class="tag-chips"><span class="tag-chip tag-chip-Puzzle">Puzzle</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clsolitaire.html" data-name="Solitaire" data-tags="Puzzle,Strategy" data-primary="Puzzle" data-group="Puzzle"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqkUPcOhtJjCQHWKd090EIeCxj9ycIYtU7aQ&amp;s" alt="Solitaire" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127183;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Solitaire</div><div class="tag-chips"><span class="tag-chip tag-chip-Puzzle">Puzzle</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="climpossiblequiz.html" data-name="The Impossible Quiz" data-tags="Puzzle" data-primary="Puzzle" data-group="Puzzle"><div class="th"><img src="https://imgs.crazygames.com/the-impossible-quiz_16x9/20260130024413/the-impossible-quiz_16x9-cover?metadata=none&amp;quality=60&amp;height=3276" alt="Impossible Quiz" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128306;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Impossible Quiz</div><div class="tag-chips"><span class="tag-chip tag-chip-Puzzle">Puzzle</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpaperio.html" data-name="Paper.io" data-tags="Strategy,Action" data-primary="Strategy" data-group="Strategy"><div class="th"><img src="https://kevin.games/assets/images/games/paper-io-2.jpg" alt="Paper.io" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128196;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Paper.io</div><div class="tag-chips"><span class="tag-chip tag-chip-Strategy">Strategy</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clslitherio.html" data-name="Slither.io" data-tags="Strategy,Action" data-primary="Strategy" data-series=".io" data-series-num="1" data-group="Strategy"><div class="th"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Slither.io" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128013;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Slither.io</div><div class="tag-chips"><span class="tag-chip tag-chip-Strategy">Strategy</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clagariolite.html" data-name="Agar.io Lite" data-tags="Strategy,Action" data-primary="Strategy" data-series=".io" data-series-num="2" data-group="Strategy"><div class="th"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Agar.io Lite" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128308;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Agar.io Lite</div><div class="tag-chips"><span class="tag-chip tag-chip-Strategy">Strategy</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clbloonsTD1.html" data-name="Bloons Tower Defence" data-tags="Strategy,Action" data-primary="Strategy" data-series="Bloons TD" data-series-num="1" data-group="Strategy"><div class="th"><img src="https://lunokhod.org/img/bloonstd.webp" alt="Bloons TD" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127880;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Bloons TD</div><div class="tag-chips"><span class="tag-chip tag-chip-Strategy">Strategy</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clbloonsTD2.html" data-name="Bloons Tower Defence 2" data-tags="Strategy,Action" data-primary="Strategy" data-series="Bloons TD" data-series-num="2" data-group="Strategy"><div class="th"><img src="https://lunokhod.org/img/bloonstd2.webp" alt="Bloons TD 2" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127880;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Bloons TD 2</div><div class="tag-chips"><span class="tag-chip tag-chip-Strategy">Strategy</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clbloonsTD3.html" data-name="Bloons Tower Defence 3" data-tags="Strategy,Action" data-primary="Strategy" data-series="Bloons TD" data-series-num="3" data-group="Strategy"><div class="th"><img src="https://bloonstd.io/wp-content/uploads/thumbs/custom/B/Bloons-TD-3.webp" alt="Bloons TD 3" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127880;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Bloons TD 3</div><div class="tag-chips"><span class="tag-chip tag-chip-Strategy">Strategy</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clbloonsTD4.html" data-name="Bloons Tower Defence 4" data-tags="Strategy,Action" data-primary="Strategy" data-series="Bloons TD" data-series-num="4" data-group="Strategy"><div class="th"><img src="https://lunokhod.org/img/bloonstd4.webp" alt="Bloons TD 4" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127880;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Bloons TD 4</div><div class="tag-chips"><span class="tag-chip tag-chip-Strategy">Strategy</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clbtd5.html" data-name="Bloons Tower Defence 5" data-tags="Strategy,Action" data-primary="Strategy" data-series="Bloons TD" data-series-num="5" data-group="Strategy"><div class="th"><img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/306020/capsule_616x353.jpg?t=1770223235" alt="Bloons TD 5" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127880;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Bloons TD 5</div><div class="tag-chips"><span class="tag-chip tag-chip-Strategy">Strategy</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clbloonsTD6scratch.html" data-name="Bloons Tower Defence 6" data-tags="Strategy,Action" data-primary="Strategy" data-series="Bloons TD" data-series-num="6" data-group="Strategy"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTipygZ1jUKjtw3HYIR3Jza3nz2eA_1CIIPxw&amp;s" alt="Bloons TD 6" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127880;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Bloons TD 6 (Scratch)</div><div class="tag-chips"><span class="tag-chip tag-chip-Strategy">Strategy</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="minecraft.html" data-name="Minecraft Classic" data-tags="Adventure,Strategy" data-primary="Adventure" data-group="Adventure"><div class="th"><img src="https://www.elternguide.online/wp-content/uploads/2018/01/minecraft.png" alt="Minecraft Classic" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#9935;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Minecraft Classic</div><div class="tag-chips"><span class="tag-chip tag-chip-Adventure">Adventure</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="undertale.html" data-name="Undertale" data-tags="Adventure" data-primary="Adventure" data-series="Toby Fox" data-series-num="1" data-group="Adventure"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvd580DXSP9FklrlkinrOAkAPXfl6xw5-FjQ&amp;s" alt="Undertale" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#10084;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Undertale</div><div class="tag-chips"><span class="tag-chip tag-chip-Adventure">Adventure</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="deltarune.html" data-name="Deltarune" data-tags="Adventure" data-primary="Adventure" data-series="Toby Fox" data-series-num="2" data-group="Adventure"><div class="th"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1671210/7ccda5b1631d2e60cc756a3271e845dbb9168821/header.jpg?t=1749252480" alt="Deltarune" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#9900;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Deltarune</div><div class="tag-chips"><span class="tag-chip tag-chip-Adventure">Adventure</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="cldrifthuntersmerge.html" data-name="Drift Hunters" data-tags="Sports" data-primary="Sports" data-group="Sports"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwoLePU7OuN4Yjh1KIzJnFj44IGlzl_ihszQ&amp;s" alt="Drift Hunters" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128663;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Drift Hunters</div><div class="tag-chips"><span class="tag-chip tag-chip-Sports">Sports</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clbasketballstars.html" data-name="Basketball Stars" data-tags="Sports" data-primary="Sports" data-group="Sports"><div class="th"><img src="https://m.media-amazon.com/images/I/81BL1Hx2KuL.png" alt="Basketball Stars" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127936;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Basketball Stars</div><div class="tag-chips"><span class="tag-chip tag-chip-Sports">Sports</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpolytrackworksnow.html" data-name="Polytrack" data-tags="Sports" data-primary="Sports" data-group="Sports"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTte4SgbR4TxuCyscMmjBTxUkOuuPfTKPNaww&amp;s" alt="Polytrack" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127937;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Polytrack</div><div class="tag-chips"><span class="tag-chip tag-chip-Sports">Sports</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clretrobowl.html" data-name="Retro Bowl" data-tags="Sports" data-primary="Sports" data-group="Sports"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNjsvRZFAy3jkJhepJkM5dIgpW2G2hFiAYLg&amp;s" alt="Retro Bowl" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127944;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Retro Bowl</div><div class="tag-chips"><span class="tag-chip tag-chip-Sports">Sports</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clhillclimbracinglite.html" data-name="Hill Climb Racing" data-tags="Sports,Arcade" data-primary="Sports" data-group="Sports"><div class="th"><img src="https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=80,height=80,fit=cover,f=auto/b87616bb88c0e3cb4c150c59fdc767fa/hill-climb-racing-lite.png" alt="Hill Climb Racing" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#9968;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Hill Climb Racing</div><div class="tag-chips"><span class="tag-chip tag-chip-Sports">Sports</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clsoccerrandomgood.html" data-name="Soccer Random" data-tags="Sports,Arcade" data-primary="Sports" data-group="Sports"><div class="th"><img src="https://images.twoplayergames.org/files/games/other/Soccer_Random/soccer-random.jpg?auto=format&amp;w=200" alt="Soccer Random" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#9917;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Soccer Random</div><div class="tag-chips"><span class="tag-chip tag-chip-Sports">Sports</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="cldrivemady.html" data-name="Drive Mad" data-tags="Sports,Action" data-primary="Sports" data-group="Sports"><div class="th"><img src="https://drivemadgame.cc/generate.php?path=/uploads/games/main/img_68c3e328e0294.jpg&amp;width=375&amp;height=375" alt="Drive Mad" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128665;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Drive Mad</div><div class="tag-chips"><span class="tag-chip tag-chip-Sports">Sports</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clmotox3mm.html" data-name="Moto X3M" data-tags="Sports,Action" data-primary="Sports" data-series="Moto X3M" data-series-num="1" data-group="Sports"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuWiwEaTFMgkPRK8JB6lmDoX-1kRXMkHWhMQ&amp;s" alt="Moto X3M" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127949;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Moto X3M</div><div class="tag-chips"><span class="tag-chip tag-chip-Sports">Sports</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clmotox3m2.html" data-name="Moto X3M 2" data-tags="Sports,Action" data-primary="Sports" data-series="Moto X3M" data-series-num="2" data-group="Sports"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAaxv1nlvAW82sm9Wpk7x78q-rzbDolKldVA&amp;s" alt="Moto X3M 2" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127949;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Moto X3M 2</div><div class="tag-chips"><span class="tag-chip tag-chip-Sports">Sports</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clmotox3m3.html" data-name="Moto X3M 3" data-tags="Sports,Action" data-primary="Sports" data-series="Moto X3M" data-series-num="3" data-group="Sports"><div class="th"><img src="https://img.cdn.famobi.com/portal/html5games/images/tmp/MotoX3mTeaser.jpg?v=0.2-6b1f34f6" alt="Moto X3M 3" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127949;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Moto X3M 3</div><div class="tag-chips"><span class="tag-chip tag-chip-Sports">Sports</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpokemonfirered.html" data-name="Pokémon FireRed" data-tags="Pokemon,Adventure" data-primary="Pokemon" data-series="Pokemon" data-series-num="1" data-group="Pokemon"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ5UBUpcbHAC749URMLqIspyKO7gpt_S_MDA&amp;s" alt="Pokémon FireRed" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128293;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Pok&#233;mon FireRed</div><div class="tag-chips"><span class="tag-chip tag-chip-Pokemon">Pok&#233;mon</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpokemonemerald.html" data-name="Pokémon Emerald" data-tags="Pokemon,Adventure" data-primary="Pokemon" data-series="Pokemon" data-series-num="2" data-group="Pokemon"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbI7kQr9Co2I3nSnyGq9BxfmdhzYK3T7ZYjg&amp;s" alt="Pokémon Emerald" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128154;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Pok&#233;mon Emerald</div><div class="tag-chips"><span class="tag-chip tag-chip-Pokemon">Pok&#233;mon</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpokemongold.html" data-name="Pokémon Gold" data-tags="Pokemon,Adventure" data-primary="Pokemon" data-series="Pokemon" data-series-num="3" data-group="Pokemon"><div class="th"><img src="https://assets-prd.ignimgs.com/2021/12/14/pokemongold-1639518454781.jpg" alt="Pokémon Gold" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128997;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Pok&#233;mon Gold</div><div class="tag-chips"><span class="tag-chip tag-chip-Pokemon">Pok&#233;mon</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpokemonsilver.html" data-name="Pokémon Silver" data-tags="Pokemon,Adventure" data-primary="Pokemon" data-series="Pokemon" data-series-num="4" data-group="Pokemon"><div class="th"><img src="https://assets1.ignimgs.com/2019/05/17/pokemon-silver---button-1558057647925.jpg?crop=1%3A1%2Csmart&amp;format=jpg&amp;auto=webp&amp;quality=80" alt="Pokémon Silver" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#129195;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Pok&#233;mon Silver</div><div class="tag-chips"><span class="tag-chip tag-chip-Pokemon">Pok&#233;mon</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpokered.html" data-name="Pokémon Red" data-tags="Pokemon,Adventure" data-primary="Pokemon" data-series="Pokemon" data-series-num="5" data-group="Pokemon"><div class="th"><img src="https://assets-prd.ignimgs.com/2022/04/13/pokemon-red-button-2022-1649888301240.jpg" alt="Pokémon Red" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#129504;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Pok&#233;mon Red</div><div class="tag-chips"><span class="tag-chip tag-chip-Pokemon">Pok&#233;mon</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpokeblue.html" data-name="Pokémon Blue" data-tags="Pokemon,Adventure" data-primary="Pokemon" data-series="Pokemon" data-series-num="6" data-group="Pokemon"><div class="th"><img src="https://assets-prd.ignimgs.com/2021/12/14/pokemonblue-1639518061112.jpg" alt="Pokémon Blue" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128153;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Pok&#233;mon Blue</div><div class="tag-chips"><span class="tag-chip tag-chip-Pokemon">Pok&#233;mon</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpokediamond.html" data-name="Pokémon Diamond" data-tags="Pokemon,Adventure" data-primary="Pokemon" data-series="Pokemon" data-series-num="7" data-group="Pokemon"><div class="th"><img src="https://assets-prd.ignimgs.com/2022/01/31/pokemon-diamond-button-crop-1643616517892.jpg" alt="Pokémon Diamond" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128142;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Pok&#233;mon Diamond</div><div class="tag-chips"><span class="tag-chip tag-chip-Pokemon">Pok&#233;mon</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpokeheartgold.html" data-name="Pokémon HeartGold" data-tags="Pokemon,Adventure" data-primary="Pokemon" data-series="Pokemon" data-series-num="8" data-group="Pokemon"><div class="th"><img src="https://m.media-amazon.com/images/M/MV5BMTEwOGQ5M2EtNGU4NS00YjlhLWE5MjAtYmI5ZDU3ZjFhNzM5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Pokémon HeartGold" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#129351;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Pok&#233;mon HeartGold</div><div class="tag-chips"><span class="tag-chip tag-chip-Pokemon">Pok&#233;mon</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpokeplatinum.html" data-name="Pokémon Platinum" data-tags="Pokemon,Adventure" data-primary="Pokemon" data-series="Pokemon" data-series-num="9" data-group="Pokemon"><div class="th"><img src="https://assets1.ignimgs.com/2019/05/17/pokemon-platinum---button-1558057647849.jpg?crop=1%3A1%2Csmart&amp;format=jpg&amp;auto=webp&amp;quality=80" alt="Pokémon Platinum" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127775;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Pok&#233;mon Platinum</div><div class="tag-chips"><span class="tag-chip tag-chip-Pokemon">Pok&#233;mon</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clpokeyellow.html" data-name="Pokémon Yellow" data-tags="Pokemon,Adventure" data-primary="Pokemon" data-series="Pokemon" data-series-num="10" data-group="Pokemon"><div class="th"><img src="https://assets1.ignimgs.com/2019/05/17/pokemon-yellow---button-1558057648010.jpg" alt="Pokémon Yellow" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128526;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Pok&#233;mon Yellow</div><div class="tag-chips"><span class="tag-chip tag-chip-Pokemon">Pok&#233;mon</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clcookieclicker.html" data-name="Cookie Clicker" data-tags="Other,Strategy" data-primary="Other" data-group="Other"><div class="th"><img src="https://play-lh.googleusercontent.com/Z1MOuuiD05ZN5LkVmMEvKF0mqAc-FknaQ2j8s4dZiO-LSPQX4EEA3RVJdlQEtxe96ok" alt="Cookie Clicker" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127850;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Cookie Clicker</div><div class="tag-chips"><span class="tag-chip tag-chip-Other">Other</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clidlebreakout.html" data-name="Idle Breakout" data-tags="Other,Strategy" data-primary="Other" data-group="Other"><div class="th"><img src="https://www.coolmathgames.com/sites/default/files/IdleBreakout_OG-logo.jpg" alt="Idle Breakout" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#129521;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Idle Breakout</div><div class="tag-chips"><span class="tag-chip tag-chip-Other">Other</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clamongus.html" data-name="Among Us" data-tags="Other,Strategy" data-primary="Other" data-group="Other"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJwI44RIxtDJZJKG3YSrDga-TGrSDJReO8eQ&amp;s" alt="Among Us" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#128640;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Among Us</div><div class="tag-chips"><span class="tag-chip tag-chip-Other">Other</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clfridaynightfunkin.html" data-name="Friday Night Funkin'" data-tags="Other,Arcade" data-primary="Other" data-series="Friday Night Funkin'" data-series-num="1" data-group="Other"><div class="th"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTprEDhlO9RpdONLK_8BEAjHDi_0eD3YYBJYw&amp;s" alt="Friday Night Funkin'" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127925;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">FNF</div><div class="tag-chips"><span class="tag-chip tag-chip-Other">Other</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="claftertheweek.html" data-name="FNF After The Week" data-tags="Other,Arcade" data-primary="Other" data-series="Friday Night Funkin'" data-series-num="2" data-group="Other"><div class="th"><img src="https://images.gamebanana.com/img/embeddables/Mod_377023_sd_image.jpg?1665532523" alt="FNF After The Week" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127926;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">FNF After The Week</div><div class="tag-chips"><span class="tag-chip tag-chip-Other">Other</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="clfnfdustin.html" data-name="Friday Night Dustin" data-tags="Other,Arcade" data-primary="Other" data-series="Friday Night Funkin'" data-series-num="3" data-group="Other"><div class="th"><img src="https://i.ytimg.com/vi/MLOi20jNdwI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&amp;rs=AOn4CLA9WETDlXQHJJ1UIuCMGtjGH35fNw" alt="Friday Night Dustin" onerror="this.classList.add('img-err')"/><div class="th-fallback">&#127927;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Friday Night Dustin'</div><div class="tag-chips"><span class="tag-chip tag-chip-Other">Other</span></div><button class="cbtn">Play</button></div></div>
+      <div class="card" data-file="online_viewer_net.html" data-name="Injex" data-tags="Other" data-primary="Other" data-group="Other" data-secret="true" style="display:none"><div class="th"><div class="th-fallback" style="font-size:2.5rem">&#128274;</div><div class="th-overlay"></div></div><div class="cb"><div class="cn">Injex</div><div class="tag-chips"><span class="tag-chip tag-chip-Other">Other</span></div><button class="cbtn">Play</button></div></div>
+      <div id="nores"><span>&#127756;</span><strong>No games found in this sector</strong><p>Try a different search or category</p></div>
+    </div>
+  </section>
+  <footer><strong>&#127756; Galaxy Games</strong> &#160;&#183;&#160; Free Forever &#160;&#183;&#160; &#169; 2026</footer>
+</div>
+
+<div id="player">
+  <div class="pbar">
+    <div class="pbar-left"><div class="pbar-dot"></div><div id="ptitle">Loading...</div><div class="pbar-cats" id="pbar-cats"></div></div>
+    <div class="pbtns">
+      <button class="pb pb-reload" id="pb-reload"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg> Reload</button>
+      <button class="pb pb-fs" id="pb-fs"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg> Fullscreen</button>
+      <button class="pb pb-close" id="pb-close"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Close</button>
+    </div>
+  </div>
+  <iframe id="gframe" allowfullscreen="allowfullscreen" sandbox="allow-same-origin allow-scripts allow-forms allow-pointer-lock allow-top-navigation allow-modals allow-popups allow-downloads"></iframe>
+</div>
+
+<script>
+<![CDATA[
+(function(){
+'use strict';
+function $(id){return document.getElementById(id);}
+function lsGet(key){try{return localStorage.getItem(key);}catch(e){return null;}}
+function lsSet(key,value){try{localStorage.setItem(key,value);}catch(e){}}
+function setNbsp(el){el.innerHTML='&nbsp;';}
+function getData(el,key){return el.getAttribute('data-'+key)||'';}
+function lower(text){return (text||'').toLowerCase();}
+
+var PW='GG123';
+var INJEX_PW='GG456';
+var INJEX_SEARCH_TRIGGER='injex';
+var AUTH_KEY='gg_auth';
+var INJEX_KEY='gg_injex';
+var unlocked=false;
+var reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var toastTimer;
+function showToast(msg){
+  var t=$('toast');
+  t.textContent=msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(function(){t.classList.remove('show');},2200);
+}
+function injexUnlocked(){return lsGet(INJEX_KEY)==='1';}
+var injexCard=document.querySelector('.card[data-secret="true"]');
+
+function applyInjexVisibility(){
+  if(!injexCard)return;
+  if(injexUnlocked()){injexCard.removeAttribute('data-secret');injexCard.style.display='';}
+}
+
+function unlock(){
+  if(unlocked)return;
+  unlocked=true;
+  $('pw').style.display='none';
+  $('site').style.display='block';
+  applyInjexVisibility();
+  if(!reduceMotion){
+    initStars();
+    initShootingStars();
+  }else{
+    $('cvs').style.display='none';
+  }
+  initImgLoaded();
+  initFilter();
+}
+
+var pwIn=$('pw-in'),pwErr=$('pw-err'),pwInner=document.querySelector('.pw-inner');
+function tryPW(){
+  if(pwIn.value===PW){lsSet(AUTH_KEY,'1');unlock();}
+  else{
+    pwErr.textContent='Wrong code \u2014 try again';
+    pwIn.value='';
+    pwInner.classList.remove('pw-shake');
+    void pwInner.offsetWidth;
+    pwInner.classList.add('pw-shake');
+    setTimeout(function(){setNbsp(pwErr);},2200);
+    setTimeout(function(){pwInner.classList.remove('pw-shake');},420);
+  }
+}
+$('pw-go').onclick=tryPW;
+pwIn.addEventListener('keydown',function(e){if(e.key==='Enter')tryPW();});
+
+function initImgLoaded(){
+  var thumbs=document.querySelectorAll('.th');
+  function markLoaded(th){th.classList.add('loaded');}
+  for(var i=0;i<thumbs.length;i++){
+    var th=thumbs[i];
+    var img=th.querySelector('img');
+    if(!img){markLoaded(th);continue;}
+    if(img.complete){markLoaded(th);}
+    else{
+      (function(currTh,currImg){
+        currImg.addEventListener('load',function(){markLoaded(currTh);});
+        currImg.addEventListener('error',function(){markLoaded(currTh);});
+      })(th,img);
+    }
+  }
+}
+
+function initStars(){var cv=document.getElementById('cvs'),ctx=cv.getContext('2d'),stars=[];function resize(){cv.width=window.innerWidth;cv.height=window.innerHeight;stars=[];for(var i=0;i<180;i++)stars.push({x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*0.8+0.1,a:Math.random()*0.45+0.05,sp:Math.random()*0.0012+0.0003,ph:Math.random()*Math.PI*2,c:0});for(var i=0;i<60;i++)stars.push({x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*1.4+0.5,a:Math.random()*0.5+0.1,sp:Math.random()*0.0008+0.0002,ph:Math.random()*Math.PI*2,c:Math.floor(Math.random()*3)+1});}window.addEventListener('resize',resize);resize();var cols=['rgba(255,255,255,','rgba(168,200,255,','rgba(200,168,255,','rgba(168,240,255,'];function frame(t){ctx.clearRect(0,0,cv.width,cv.height);for(var i=0;i<stars.length;i++){var s=stars[i];var a=s.a*(0.4+0.6*Math.sin(t*s.sp*60+s.ph));ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=cols[s.c]+a+')';ctx.fill();}requestAnimationFrame(frame);}requestAnimationFrame(frame);}
+function initShootingStars(){var cols=['rgba(255,255,255,.9),rgba(168,85,247,.45)','rgba(56,189,248,.9),rgba(168,85,247,.3)','rgba(244,114,182,.8),rgba(109,40,217,.3)'];function spawn(){var el=document.createElement('div');var sx=Math.random()*window.innerWidth,sy=Math.random()*window.innerHeight*0.5,len=70+Math.random()*150,dur=400+Math.random()*600,ang=15+Math.random()*35,dist=280+Math.random()*420,c=cols[Math.floor(Math.random()*cols.length)];el.style.cssText='position:fixed;left:'+sx+'px;top:'+sy+'px;width:'+len+'px;height:1.5px;border-radius:1px;pointer-events:none;z-index:0;transform-origin:left center;background:linear-gradient(90deg,'+c+',transparent)';document.body.appendChild(el);el.animate([{transform:'rotate('+ang+'deg) translateX(0)',opacity:1},{transform:'rotate('+ang+'deg) translateX('+dist+'px)',opacity:0}],{duration:dur,easing:'ease-in',fill:'forwards'}).onfinish=function(){el.remove();};}(function loop(){spawn();setTimeout(loop,1200+Math.random()*3500);})();}
+
+function getTags(c){var t=c.getAttribute('data-tags')||'';return t.split(',').map(function(s){return s.trim();}).filter(Boolean);}
+
+var injexModal=$('injex-modal');
+var injexIn=$('injex-in');
+var injexErr=$('injex-err');
+var injexPendingCard=null;
+function openInjexModal(card){
+  injexPendingCard=card;
+  injexModal.classList.add('open');
+  injexIn.value='';
+  setNbsp(injexErr);
+  setTimeout(function(){injexIn.focus();},60);
+}
+function closeInjexModal(){injexModal.classList.remove('open');injexPendingCard=null;}
+function tryInjex(){
+  if(injexIn.value===INJEX_PW){
+    var cardToOpen=injexPendingCard;
+    lsSet(INJEX_KEY,'1');closeInjexModal();
+    if(injexCard){injexCard.removeAttribute('data-secret');injexCard.style.display='';if(typeof runFilter==='function')runFilter();}
+    showToast('\uD83D\uDD12 Injex unlocked \u2014 it\'s yours forever!');
+    openGame(cardToOpen);
+  } else {
+    injexErr.textContent='Wrong code \u2014 access denied';injexIn.value='';
+    injexIn.style.borderColor='#ef4444';injexIn.style.boxShadow='0 0 0 3px rgba(239,68,68,0.2)';
+    setTimeout(function(){setNbsp(injexErr);injexIn.style.borderColor='';injexIn.style.boxShadow='';},2000);
+  }
+}
+$('injex-go').onclick=tryInjex;
+$('injex-cancel').onclick=closeInjexModal;
+injexIn.addEventListener('keydown',function(e){if(e.key==='Enter')tryInjex();if(e.key==='Escape')closeInjexModal();});
+
+var runFilter;
+function initFilter(){
+  var allCards=Array.prototype.slice.call(document.querySelectorAll('#game-grid .card'));
+  var normalCards=[],secretCards=[];
+  for(var i=0;i<allCards.length;i++){
+    if(allCards[i].getAttribute('data-secret')==='true')secretCards.push(allCards[i]);
+    else normalCards.push(allCards[i]);
+  }
+
+  for(var i=0;i<allCards.length;i++){
+    (function(card){
+      var isSecret=card.getAttribute('data-secret')==='true';
+      function handlePlay(){if(isSecret&&!injexUnlocked()){openInjexModal(card);}else{openGame(card);}}
+      card.setAttribute('tabindex','0');
+      card.setAttribute('role','button');
+      card.setAttribute('aria-label','Open '+getData(card,'name'));
+      card.addEventListener('click',handlePlay);
+      card.addEventListener('keydown',function(e){
+        if(e.key==='Enter'||e.key===' '){
+          e.preventDefault();
+          handlePlay();
+        }
+      });
+      var btn=card.querySelector('.cbtn');
+      if(btn)btn.addEventListener('click',function(e){e.stopPropagation();handlePlay();});
+    })(allCards[i]);
+  }
+
+  var sqEl=$('sq'),sqClear=$('sq-clear'),noresEl=$('nores'),activeCat='all';
+  $('gc').textContent='Showing '+normalCards.length+' of '+normalCards.length+' games';
+  function shouldShowCard(card,query){
+    var tags=getTags(card);
+    var catOk=activeCat==='all'||tags.indexOf(activeCat)!==-1;
+    var nameOk=!query||lower(getData(card,'name')).indexOf(query)!==-1;
+    return catOk&&nameOk;
+  }
+
+  var filterTimer;
+  sqEl.addEventListener('input',function(){
+    sqClear.classList.toggle('visible',sqEl.value.length>0);
+    clearTimeout(filterTimer);
+    filterTimer=setTimeout(runFilter,75);
+  });
+  sqClear.onclick=function(){sqEl.value='';sqClear.classList.remove('visible');sqEl.focus();runFilter();};
+  var pills=document.querySelectorAll('#cat-bar .cp');
+  for(var i=0;i<pills.length;i++){pills[i].addEventListener('click',function(){for(var j=0;j<pills.length;j++)pills[j].classList.remove('on');this.classList.add('on');activeCat=this.getAttribute('data-c');sqEl.value='';sqClear.classList.remove('visible');runFilter();});}
+
+  runFilter=function(){
+    var q=lower(sqEl.value).trim();
+    var shown=0;
+    for(var i=0;i<normalCards.length;i++){
+      var c=normalCards[i];
+      var show=shouldShowCard(c,q);
+      c.style.display=show?'':'none';
+      if(show)shown++;
+    }
+    for(var i=0;i<secretCards.length;i++){
+      var s=secretCards[i];
+      var alreadyUnlocked=!s.getAttribute('data-secret');
+      var show=false;
+      if(alreadyUnlocked){show=shouldShowCard(s,q);}
+      else{show=q===INJEX_SEARCH_TRIGGER;}
+      s.style.display=show?'':'none';
+      if(show)shown++;
+    }
+    noresEl.style.display=shown?'none':'block';
+    $('gc').textContent='Showing '+shown+' of '+normalCards.length+' games';
+  };
+  runFilter();
+}
+
+var player=$('player'),gframe=$('gframe'),ptitle=$('ptitle'),pbarCats=$('pbar-cats');
+var catColors={Action:'color:#c026d3;border-color:rgba(192,38,211,0.4);background:rgba(192,38,211,0.1)',Arcade:'color:#0ea5e9;border-color:rgba(14,165,233,0.4);background:rgba(14,165,233,0.1)',Puzzle:'color:#7c3aed;border-color:rgba(124,58,237,0.4);background:rgba(124,58,237,0.1)',Strategy:'color:#10b981;border-color:rgba(16,185,129,0.4);background:rgba(16,185,129,0.1)',Adventure:'color:#a855f7;border-color:rgba(168,85,247,0.4);background:rgba(168,85,247,0.1)',Sports:'color:#22c55e;border-color:rgba(34,197,94,0.4);background:rgba(34,197,94,0.1)',Horror:'color:#ef4444;border-color:rgba(239,68,68,0.4);background:rgba(239,68,68,0.1)',Pokemon:'color:#facc15;border-color:rgba(250,204,21,0.4);background:rgba(250,204,21,0.1)',Other:'color:#f59e0b;border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.1)'};
+function renderPlayerChips(tags){
+  pbarCats.innerHTML='';
+  for(var i=0;i<tags.length;i++){
+    var span=document.createElement('span');
+    span.className='pbar-cat-chip';
+    span.textContent=tags[i];
+    span.style.cssText=(catColors[tags[i]]||'color:var(--muted);border-color:var(--border)')+';font-size:.55rem;font-weight:600;letter-spacing:1px;padding:2px 8px;border-radius:99px;border:1px solid';
+    pbarCats.appendChild(span);
+  }
+}
+function openGame(card){
+  ptitle.textContent=getData(card,'name').toUpperCase();
+  var tags=getTags(card);
+  renderPlayerChips(tags);
+  var BASE='https://cdn.jsdelivr.net/gh/SurgeColt999/GalaxyGames@main/';
+  gframe.src=BASE+getData(card,'file');
+  player.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closePlayer(){gframe.src='about:blank';player.classList.remove('open');document.body.style.overflow='';}
+$('pb-close').onclick=closePlayer;
+$('pb-reload').onclick=function(){var s=gframe.src;gframe.src='about:blank';setTimeout(function(){gframe.src=s;},80);showToast('Reloading game...');};
+$('pb-fs').onclick=function(){var el=gframe,fn=el.requestFullscreen||el.webkitRequestFullscreen||el.mozRequestFullScreen||el.msRequestFullscreen;if(fn)fn.call(el);};
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(injexModal.classList.contains('open')){closeInjexModal();}else if(player.classList.contains('open')){closePlayer();}}});
+$('nav-home').onclick=function(){this.classList.add('active');};
+
+if(lsGet(AUTH_KEY)==='1')unlock();
+})();
+]]>
+</script>
+</body>
+</html>
+</foreignObject>
+</svg>

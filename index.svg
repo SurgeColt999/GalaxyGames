@@ -1,18 +1,7 @@
-<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" style="background-color: black;">
-  <rect width="100%" height="100%" fill="black" />
-  <text x="50%" y="50" font-size="40" fill="white" text-anchor="middle">Galaxy Games</text>
-  <g transform="translate(100, 100)">
-    <g transform="translate(0, 0)">
-      <rect x="0" y="0" width="180" height="240" fill="darkblue" stroke="white" />
-      <text x="90" y="120" font-size="20" fill="white" text-anchor="middle">Game 1</text>
-    </g>
-    <g transform="translate(200, 0)">
-      <rect x="0" y="0" width="180" height="240" fill="darkblue" stroke="white" />
-      <text x="90" y="120" font-size="20" fill="white" text-anchor="middle">Game 2</text>
-    </g>
-    <g transform="translate(400, 0)">
-      <rect x="0" y="0" width="180" height="240" fill="darkblue" stroke="white" />
-      <text x="90" y="120" font-size="20" fill="white" text-anchor="middle">Game 3</text>
-    </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <iframe src="index.html" width="100%" height="100%" seamless="seamless"></iframe>
+    </body>
+  </foreignObject>
 </svg>
